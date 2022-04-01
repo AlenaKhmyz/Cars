@@ -41,10 +41,10 @@ const formatDate = (totalDays: number): string => {
 }
 
 const TimeSpan: FC<Item> = ({ item }) => {
-  const difference = differenceInMs(item.dateFrom, item.dateTo ||  dayjs().format("DD.MM.YYYY"))
+  const difference = differenceInMs(item.dateFrom as string, item.dateTo as string ||  dayjs().format("DD.MM.YYYY"))
   const days = msToDays(difference)
   return (
-    <TableCell text={formatDate(days)} />
+    <TableCell text={formatDate(days)} w={15}/>
   )
   
   

@@ -5,14 +5,14 @@ export type Car = {
   year: number;
   vin: string | null;
   company: string;
-  note: string;
+  note: string | null;
   rightHand: boolean;
   currency: string;
   price: number;
   phone: string;
   ein: string;
-  dateFrom: string;
-  dateTo: string;
+  dateFrom: string | Date;
+  dateTo: string | Date;
 };
 
 export interface Item {

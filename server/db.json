@@ -6,15 +6,15 @@
       "model": "FJ Cruiser",
       "year": 2008,
       "vin": null,
-      "company": "Thoughtblab",
+      "company": "Thoughtbl",
       "note": "Unspecified occupant of three-wheeled motor vehicle injured in collision with pedal cycle in nontraffic accident, subsequent encounter",
       "rightHand": false,
       "currency": "Kuna",
       "price": 19862,
       "phone": "+385 833 147 1490",
       "ein": "20-7868360",
-      "dateFrom": "18.06.2018",
-      "dateTo": "10.07.2005"
+      "dateFrom": "Invalid Date",
+      "dateTo": "07.10.2005"
     },
     {
       "id": 2,
@@ -719,6 +719,54 @@
       "ein": "74-3899674",
       "dateFrom": "15.05.2016",
       "dateTo": "30.09.2002"
+    },
+    {
+      "name": ";lgdmg;",
+      "model": "sl,dfmsmdf;",
+      "year": 1999,
+      "vin": "fmg f/,g",
+      "company": "lsdkfmlksdfm",
+      "note": ".,bf,m.,d,fg/d/f",
+      "rightHand": true,
+      "currency": ";lsdmf;lsdf",
+      "price": 1999,
+      "phone": "12124",
+      "ein": "lffgmsg",
+      "dateFrom": "2022-03-30T14:27:24.000Z",
+      "dateTo": "2022-03-14T14:27:24.000Z",
+      "id": 46
+    },
+    {
+      "name": "cdcfd",
+      "model": "eeeeee",
+      "year": 1111111,
+      "vin": "1111",
+      "company": "frfref",
+      "note": "dffcfvc",
+      "rightHand": true,
+      "currency": "1111",
+      "price": 11111,
+      "phone": "1emnem",
+      "ein": "11222",
+      "dateFrom": "2022-01-10T18:42:26.000Z",
+      "dateTo": "2022-03-22T18:42:26.000Z",
+      "id": 47
+    },
+    {
+      "name": "1111",
+      "model": "111",
+      "year": 111,
+      "vin": "111",
+      "company": "111",
+      "note": "11111",
+      "rightHand": false,
+      "currency": "1111",
+      "price": 111,
+      "phone": "1111",
+      "ein": "111",
+      "dateFrom": "07.02.2022",
+      "dateTo": "27.02.2022",
+      "id": 48
     }
   ]
 }
