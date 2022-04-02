@@ -1,27 +1,34 @@
 import { FC, useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 import TableCell from './TableCell'
 import { Car } from '../types'
 import TimeSpan from './TimeSpan'
 import RightHand from './RightHand'
-import axios from 'axios';
+import Pagination from './Pagination'
 import HandleModal from './HandleModal'
-import { Link } from 'react-router-dom';
-import { ROUTES } from '../const/Routes'
 
 
+const carsPerPage = 10
 
 const TableContent: FC = () => {
   
   const [cars, setCars] = useState<Car[]>([])
+  const [currentPage, setCurrentPage] = useState<number>(1)
+  const [totalCars, setTotalCars] = useState<number>(0)
+
+  const paginate = async (pageNumber: number) => {
+    const result = await axios.get(`http://localhost:3004/cars?_page=${pageNumber}&_limit=10`)
+    setCars(result.data);
+    setCurrentPage(pageNumber)
+    setTotalCars(Number(result.headers['x-total-count']))
+    console.log(result.headers)
+  }
   
 
   useEffect(() => { 
-    async function fetchAPI() {
-      const result = await axios.get(`http://localhost:3004/cars`)
-      setCars(result.data);
-    }
-    fetchAPI()
-  }, [])
+    paginate(currentPage)
+  }, [currentPage]) 
 
 
 
@@ -56,7 +63,7 @@ const TableContent: FC = () => {
   
   return (
     <div>
-      {cars && cars.map((item, index) => ( //Link
+      {cars && cars.map((item, index) => (
         <div className={`flex flex-row w-fit ${index % 2 ? 'bg-sky-100' : 'bg-white'}`} key={item.id} >
           <div className='flex flex-direction:row w-[4rem] items-center justify-center hover:bg-regal-blue'>
               <HandleModal deleteCar={() => deleteCar(item.id)} />
@@ -81,6 +88,15 @@ const TableContent: FC = () => {
           </Link>
         </div>  
       ))}
+      {cars.length && 
+        <Pagination
+          currentPage={currentPage}
+          paginate={paginate}
+          carsPerPage={carsPerPage}
+          totalCars={totalCars}
+        />
+      }
+        
     </div>
   )
 }
